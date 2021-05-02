@@ -1,2 +1,7 @@
-<h1>Semesters#new</h1>
-<p>Find me in app/views/semesters/new.html.erb</p>
+<h1> Создание семестра </h1>
+<%= form_for @semester, url: semesters_path do |f| %>
+  <%= f.text_field :name %><br>
+  <%= f.text_field :fullname %><br>
+  <%= f.check_box :current %><br>
+  <%= f.submit "Создать семестр" %>
+<% end %>
