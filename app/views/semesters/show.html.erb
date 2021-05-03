@@ -1,3 +1,9 @@
 <h1>Наш созданный семестр с названием <%= @semester.name %> </h1>
 <p>Название <%= @semester.fullname %> </p>
 <p>Являеться ли текущим семестром? <%= @semester.current %> </p>
+
+<%= form_for [@semester, @semester.courses.build] do |f| %>
+  <%= f.text_field :name %><br>
+  <%= f.text_field :description %><br>
+  <%= f.submit "Создать курс" %>
+<% end %>
